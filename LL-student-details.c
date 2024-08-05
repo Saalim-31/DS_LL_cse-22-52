@@ -1,8 +1,7 @@
-#include<iostream>
-using namespace std;
+#include<stdio.h>
+#include<stdlib.h>
 
-
-typedef struct node{
+ struct node{
     char Name[100];
     int roll_no;
     float marks;
@@ -25,20 +24,20 @@ void Create()
     {
         temp = (Node *) malloc(sizeof(Node));
 
-        cout << "--------------------------------------" << endl;
+       printf( "--------------------------------------" endl);
 
-        cout << "Enter the Name of Student : ";
-        cin >> temp->Name;
+         printf( "Enter the Name of Student : ");
+        scanf("%d", &temp->Name);
 
-        cout << "--------------------------------------" << endl;
+        printf( "-------------------------------------- /n" );
 
-        cout << "Enter the Roll No of Student : ";
-        cin >> temp -> roll_no;
+         printf( "Enter the Roll No of Student : ");
+       scanf("%d", &temp -> roll_no);
 
-        cout << "--------------------------------------" << endl;
+         printf( "--------------------------------------/n");
 
-        cout << "Enter the Total Marks of student : ";
-        cin >>temp -> marks;
+        printf( "Enter the Total Marks of student : ");
+       scanf("%d", &temp -> marks);
 
         temp -> next = NULL;
 
@@ -61,11 +60,11 @@ void View()
 
     while(trav != NULL)
     {
-        cout << "--------------------------------------" << endl;
-        cout << "Name : " << trav -> Name << endl;
-        cout << "Roll No : "<< trav -> roll_no << endl;
-        cout << "Marks : " << trav -> marks << endl;
-        cout << "--------------------------------------" << endl;
+       printf("--------------------------------------") ;
+       printf( "Name : %d \n" , trav -> Name );
+       printf( "Roll No : %d \n", trav -> roll_no );
+       printf("Marks : %d \n"  ,trav -> marks );
+        printf "--------------------------------------" << endl;
 
         trav = trav -> next;
     }
@@ -81,11 +80,11 @@ void Find()
     {
         if(trav ->marks < 50)
         {
-            cout << "--------------------------------------" << endl;
-            cout << "Name : " << trav -> Name << endl;
-            cout << "Roll No : "<< trav -> roll_no << endl;
-            cout << "Marks : " << trav -> marks << endl;
-            cout << "--------------------------------------" << endl;
+            printf ("--------------------------------------" ;
+           printf ("Name : %D" ,trav -> Name );
+            printf ("Roll No %d: ", trav -> roll_no) ;
+           printf( "Marks : %d"  trav -> marks );
+           printf("--------------------------------------") ;
 
         }
         trav = trav -> next;
@@ -99,18 +98,18 @@ void Greatest()
     Node *trav = Head;
     int n;
 
-    cout << "Enter the Range from which you want to Get : ";
-    cin >> n;
+   printf( "Enter the Range from which you want to Get : ");
+    scanf("%d", &n);
 
     while(trav != NULL)
     {
         if(trav -> marks > n)
         {
-            cout << "--------------------------------------" << endl;
-            cout << "Name : " << trav -> Name << endl;
-            cout << "Roll No : "<< trav -> roll_no << endl;
-            cout << "Marks : " << trav -> marks << endl;
-            cout << "--------------------------------------" << endl;
+           printf("--------------------------------------" );
+           printf ("Name : %d" ,trav -> Name );
+            printf ("Roll No %d: ",trav -> roll_no );
+            printf("Marks : &d",trav -> marks );
+            printf("--------------------------------------" );
         }
         trav = trav -> next;
     }
@@ -122,18 +121,18 @@ void Get_by_Roll()
     Node *trav = Head;
 
     int roll;
-    cout << "Enter the Roll No of Student you want to get : ";
-    cin >> roll;
+    printf( "Enter the Roll No of Student you want to get : ");
+    scanf("%d", &roll);
 
     while(trav != NULL)
     {
         if(trav -> roll_no == roll)
         {
-            cout << "--------------------------------------" << endl;
-            cout << "Name : " << trav -> Name << endl;
-            cout << "Roll No : "<< trav -> roll_no << endl;
-            cout << "Marks : " << trav -> marks << endl;
-            cout << "--------------------------------------" << endl;
+           printf ("--------------------------------------" );
+            printf ("Name : %d", trav -> Name );
+            printf ("Roll No %d: ", trav -> roll_no );
+           printf("Marks : %d" , trav -> marks);
+            printf("--------------------------------------" );
         }
         trav = trav -> next;
     }
@@ -145,8 +144,8 @@ int main()
     
     while(1)
     {
-        cout << "1 for Create Student Data\n2 for View Student Data\n3 for Students < 50 Marks\n4 for Greatest Marks\n5 for Get Student by Roll No\n6 for EXIT\nEnter your choice : ";
-        cin >> choice;
+        printf("1 for Create Student Data\n2 for View Student Data\n3 for Students < 50 Marks\n4 for Greatest Marks\n5 for Get Student by Roll No\n6 for EXIT\nEnter your choice : ");
+       scanf("%d", &choice);
 
         if(choice == 1)
             Create();
