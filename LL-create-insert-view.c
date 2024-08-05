@@ -1,5 +1,6 @@
-#include<iostream>
-using namespace std;
+#include<stdio.h>
+#include<stdlib.h>
+
 
 struct node {
     int data;
@@ -14,15 +15,15 @@ void create()
     int n;
     struct node *temp;
 
-    cout << "Enter the Number of Nodes to Insert : ";
-    cin >> n;
+    printf("Enter the Number of Nodes to Insert : ");
+    scanf( "%d",&n);
 
     for(int i=0; i<n; i++)
     {
         temp = (struct node *) malloc(sizeof(struct node));
         
-        cout << "Enter the Elements : ";
-        cin >> temp -> data;
+       prinntf( "Enter the Elements : ");
+        scanf("%d",&temp -> data);
 
         temp -> next = NULL;
 
@@ -46,7 +47,7 @@ void view()
 
     while(trav != NULL)
     {
-        cout << trav -> data << endl;
+      printf( "%d",trav -> data ) ;
         trav = trav -> next;
     }
 }
@@ -60,11 +61,11 @@ void insert()
 
     temp -> next = NULL;
 
-    cout << "Enter the Value you want to Insert : ";
-    cin >> temp -> data;
+    printf( "Enter the Value you want to Insert : ");
+    scanf( "%d",&temp -> data);
 
-    cout << "Enter the Value After which you want to Insert : ";
-    cin >> value;
+    printf( "Enter the Value After which you want to Insert : ");
+    scanf("%d",  &value);
 
     trav = head;
 
@@ -81,8 +82,8 @@ void Delete()
 {
     int item;
     struct node *temp;
-    cout << "Enter the Node to Delete : ";
-    cin >> item;
+    printf( "Enter the Node to Delete : ");
+    scanf("%d", &item);
 
     //Deleting Head
     if(head -> data == item)
@@ -118,8 +119,8 @@ int main()
     int ch;
     while (1)
     {
-        cout << "Enter the Choice\n1 for create\n2 for View\n3 for Insert\n4 for Delete\n5 for Exit\nEnter the Choice : ";
-        cin >> ch;
+        printf( "Enter the Choice\n1 for create\n2 for View\n3 for Insert\n4 for Delete\n5 for Exit\nEnter the Choice : ");
+        scanf("%d", &ch);
 
         if(ch == 1) create();
         if(ch == 2) view();
